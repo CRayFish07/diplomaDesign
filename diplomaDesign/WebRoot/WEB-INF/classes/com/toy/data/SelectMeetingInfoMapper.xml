@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.toy.data.SelectMeetingInfoMapper">
+	<!-- 输入房间的id，查找该房间号中还没有举行的会议 -->
+	<select id="selectMeetingList" parameterType="int" resultType="Meeting">
+		SELECT meeting_id, meeting_room_id, meeting_name,
+				log_name, meeting_start, meeting_end, 
+				meeting_order_time, meeting_mark
+		FROM meet_date
+		WHERE meeting_room_id = #{id} AND meeting_mark=0; <!-- meeting_mark=0表示该会议还没有举行 -->
+	</select>
+	
+	<!-- 选择出自己已经通过的申请，主要是对于部门经理，也就是要举行会议的人的审批 -->
+	<select id="selectPassMeetingList" parameterType="string" resultType="Meeting">
+		SELECT meeting_id, meeting_room_id, meeting_name, log_name, meeting_start, meeting_end, meeting_order_time, meeting_mark
+		FROM meet_date
+		WHERE log_name = #{logName} AND meeting_mark = 0;  <!-- logName代表申请该会议人的用户 -->
+	</select>
+</mapper>

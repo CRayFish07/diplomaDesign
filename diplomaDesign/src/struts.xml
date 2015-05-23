@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<!-- 修改编码方式，改用utf-8编码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant> 
+	
+	<package name="log" extends="struts-default" namespace="/">
+		<action name="log" class="com.toy.action.LogAction">
+			<result name="admin">/WEB-INF/log/admin.jsp</result>
+			<result name="manager">/WEB-INF/log/manager.jsp</result>
+			<result name="employee">/WEB-INF/log/employee.jsp</result>
+			<result name="deptManager">/WEB-INF/log/deptManager.jsp</result>
+			<result name="error">/WEB-INF/log/logErr.jsp</result>
+		</action>		
+	</package>
+	
+	<!-- 操作公司职员增加、删除、修改 -->
+	<package name="operationEmployee" extends="struts-default" namespace="/">
+		<action name="addEmployee" class="com.toy.action.AddEmployeeAction">
+			<result name="success">/WEB-INF/manager/addSuccess.jsp</result>
+			<result name="error">/WEB-INF/manager/addEmp.jsp</result>
+		</action>
+		<action name="deleteEmployee" class="com.toy.action.DeleteEmployeeAction">
+			<result name="success">/WEB-INF/manager/deleteSuccess.jsp</result>
+			<result name="error">/WEB-INF/manager/deleteEmp.jsp</result>
+		</action>
+		<action name="updateEmployee" class="com.toy.action.UpdateEmployeeAction">
+			<result name="success">/WEB-INF/manager/updateSuccess.jsp</result>
+			<result name="error">/WEB-INF/manager/updateEmp.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 操作公司里面的会议室的增加、删除、修改 -->
+	<package name="operationRoom" extends="struts-default" namespace="/">
+		<action name="addRoom" class="com.toy.action.AddRoomAction">
+			<result name="success">/WEB-INF/room/addRoom.jsp</result>
+			<result name="error">/WEB-INF/room/addRoomF.jsp</result>
+		</action>
+		<action name="deleteRoom" class="com.toy.action.DeleteRoomAction">
+			<result name="success" >/WEB-INF/room/deleteRoom.jsp</result>
+			<result name="error">/WEB-INF/room/deleteRoomF.jsp</result>
+		</action>
+		<action name="updateRoom" class="com.toy.action.UpdateRoomAction">
+			<result name="success">/WEB-INF/room/updateRoom.jsp</result>
+			<result name="error">/WEB-INF/room/updateRoomF.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 会议室的预约表的增加 -->
+ 	<package name="operationApplication" extends="struts-default" namespace="/">
+		<action name="addApplication" class="com.toy.action.AddApplicationAction">
+			<result name="success">/WEB-INF/meetApplication/addApplication.jsp</result>
+			<result name="error">/WEB-INF/meetApplication/addErr.jsp</result>		
+		</action>
+		<action name="addMeeting" class="com.toy.action.AddMeetingAction" >
+			<result name="success">/WEB-INF/date/date.jsp</result>
+			<result name="error">/WEB-INF/date/dateErr.jsp</result>
+		</action>
+	</package>
+	
+</struts>

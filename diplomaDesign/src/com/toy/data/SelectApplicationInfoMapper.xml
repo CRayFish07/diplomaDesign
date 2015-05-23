@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.toy.data.SelectApplicationInfoMapper">
+	<select id="selectOneApplicationInfo" parameterType="int" resultType="Application">
+		SELECT application_id, application_start, application_end, application_remarks, application_time,
+				feedback, log_name
+		FROM application
+		WHERE application_id=#{id};
+	</select>
+	
+	<select id="selectApplicationInfoList" parameterType="map" resultType="Application">
+		SELECT application_id, application_start, application_end, application_remarks, application_time,
+				feedback, log_name
+		FROM application
+		WHERE feedback=#{state} AND log_name=#{logName};
+	</select>
+</mapper>

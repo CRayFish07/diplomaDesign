@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.toy.data.EmployeeLogMapper">
+	<select id="selectPassword" parameterType="string" resultType="UserLogVerify">
+		SELECT employee.emp_authority, user_log.log_password FROM employee, user_log
+				WHERE user_log.log_emp_id = employee.emp_id
+							AND user_log.log_name=#{name}
+	</select>
+</mapper>

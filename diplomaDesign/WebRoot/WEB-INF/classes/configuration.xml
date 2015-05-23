@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration     
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"     
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- 配置数据库连接信息 -->
+  	<properties resource="config.properties" />
+	
+	<!-- 给类配置别名 -->
+	<typeAliases>
+		<typeAlias type="com.toy.model.Manager" alias="Manager"/>
+		<typeAlias type="com.toy.model.Application" alias="Application"/>
+		<typeAlias type="com.toy.model.Article" alias="Article"/>
+		<typeAlias type="com.toy.model.Department" alias="Department"/>
+		<typeAlias type="com.toy.model.Employee" alias="Employee"/>
+		<typeAlias type="com.toy.model.Meeting" alias="Meeting"/>
+		<typeAlias type="com.toy.model.Message" alias="Message"/>
+		<typeAlias type="com.toy.model.Room" alias="Room"/>
+		<typeAlias type="com.toy.model.UserLog" alias="UserLog"/>
+		<typeAlias type="com.toy.model.verification.UserLogVerify" alias="UserLogVerify"/>
+	</typeAliases>
+	
+	<!-- 配置数据库信息 -->	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${username}"/>
+				<property name="password" value="${password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- 增加数据库操作的实现 -->
+	<mappers>
+		<mapper resource="com/toy/data/ManagerLogMapper.xml"/>
+		<mapper resource="com/toy/data/EmployeeLogMapper.xml"/>
+		<mapper resource="com/toy/data/AddEmployeeMapper.xml"/>
+		<mapper resource="com/toy/data/DeleteEmployeeMapper.xml"/>
+		<mapper resource="com/toy/data/UpdateEmployeeMapper.xml"/>
+		<mapper resource="com/toy/data/AddRoomMapper.xml" />
+		<mapper resource="com/toy/data/DeleteRoomMapper.xml" />
+		<mapper resource="com/toy/data/UpdateRoomMapper.xml" />
+		<mapper resource="com/toy/data/AddApplicationMapper.xml" />
+		<mapper resource="com/toy/data/AddMeetingMapper.xml"/>
+		<mapper resource="com/toy/data/SelectRoomIdMapper.xml" />
+		<mapper resource="com/toy/data/SelectMeetingInfoMapper.xml"/>
+		<mapper resource="com/toy/data/SelectApplicationInfoMapper.xml"/>
+	</mappers>
+
+</configuration>

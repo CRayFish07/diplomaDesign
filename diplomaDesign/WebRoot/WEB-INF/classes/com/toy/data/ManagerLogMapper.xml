@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 这里相当于接口类的实现部分 -->
+<mapper namespace="com.toy.data.ManagerLogMapper">
+	<select id="selectPassword" parameterType="string" resultType="string" >
+	select admin_password from manager
+			where admin_name=#{name}
+	</select>
+	
+</mapper>

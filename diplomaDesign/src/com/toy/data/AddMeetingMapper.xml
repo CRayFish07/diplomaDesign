@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.toy.data.AddMeetingMapper">
+	<insert id="insertMeeting" parameterType="Meeting" >
+		INSERT INTO meet_date(meeting_id, meeting_room_id, meeting_name, log_name, meeting_start, meeting_end,
+											meeting_order_time, meeting_mark)
+		VALUES(NULL, #{meeting_room_id}, #{meeting_name}, #{log_name}, #{meeting_start}, #{meeting_end}, CURRENT_TIME, 0);
+	</insert>
+	
+	<update id="updateApplicationState" parameterType="map">
+		UPDATE application 
+		SET feedback = #{state}
+		WHERE application_id = #{applicationId};
+	</update>
+
+</mapper>
