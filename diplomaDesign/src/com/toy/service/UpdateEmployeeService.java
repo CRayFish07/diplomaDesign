@@ -14,6 +14,10 @@ public class UpdateEmployeeService {
 		this.employee = employee;
 	}
 	
+	/**
+	 * 初始化的时候传入了employee，然后进行全部值的输入修改
+	 * @return
+	 */
 	public boolean updateEmployee(){
 		SqlSession session = null;
 		try{

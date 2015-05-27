@@ -7,6 +7,6 @@
   </head>
   
   <body> 
-        <jsp:forward page="/WEB-INF/date/date.jsp"></jsp:forward>
+        <jsp:forward page="/WEB-INF/administrator/administrator.jsp"></jsp:forward>
   </body>
 </html>

@@ -10,45 +10,79 @@
 	
 	<package name="log" extends="struts-default" namespace="/">
 		<action name="log" class="com.toy.action.LogAction">
-			<result name="admin">/WEB-INF/log/admin.jsp</result>
-			<result name="manager">/WEB-INF/log/manager.jsp</result>
-			<result name="employee">/WEB-INF/log/employee.jsp</result>
-			<result name="deptManager">/WEB-INF/log/deptManager.jsp</result>
+			<result name="admin">/WEB-INF/administrator/administrator.jsp</result>
+			<result name="manager">/WEB-INF/manager/manager.jsp</result>
+			<result name="employee">/WEB-INF/employee/employee.jsp</result>
+			<result name="deptManager">/WEB-INF/deptManager/deptManager.jsp</result>
 			<result name="error">/WEB-INF/log/logErr.jsp</result>
 		</action>		
 	</package>
 	
-	<!-- 操作公司职员增加、删除、修改 -->
+	<!-- 操作公司职员增加、删除、修改 、查询-->
 	<package name="operationEmployee" extends="struts-default" namespace="/">
 		<action name="addEmployee" class="com.toy.action.AddEmployeeAction">
 			<result name="success">/WEB-INF/manager/addSuccess.jsp</result>
 			<result name="error">/WEB-INF/manager/addEmp.jsp</result>
 		</action>
 		<action name="deleteEmployee" class="com.toy.action.DeleteEmployeeAction">
-			<result name="success">/WEB-INF/manager/deleteSuccess.jsp</result>
-			<result name="error">/WEB-INF/manager/deleteEmp.jsp</result>
+			<result name="success">/work/deleteEmployee.jsp</result>
+			<result name="error">/work/deleteErr.jsp</result>
 		</action>
 		<action name="updateEmployee" class="com.toy.action.UpdateEmployeeAction">
-			<result name="success">/WEB-INF/manager/updateSuccess.jsp</result>
-			<result name="error">/WEB-INF/manager/updateEmp.jsp</result>
+			<result name="success">/work/updateEmployee.jsp</result>
+			<result name="error">/work/updateErr.jsp</result>
+		</action>
+		<!-- 删除中使用的查询 -->
+		<action name="selectEmployeeD" class="com.toy.action.SelectEmployeeAction">
+			<result name="success">/work/deleteEmployee.jsp</result>
+			<result name="error">/work/deleteErr.jsp</result>
+		</action>
+		<!-- 修改中使用的查询 -->
+		<action name="selectEmployeeU" class="com.toy.action.SelectEmployeeAction">
+			<result name="success">/work/updateEmployee.jsp</result>
+			<result name="error">/work/updateErr.jsp</result>
+		</action>
+		<action name="selectEmployeeById" class="com.toy.action.SelectEmployeeByIdAction">
+			<result name="success">/work/updateFrame.jsp</result>
+			<result name="error">/work/updateErr.jsp</result>
+		</action>
+		
+	</package>
+	
+	<!-- 操作公司里面的会议室的增加、删除、修改、查询 -->
+	<package name="operationRoom" extends="struts-default" namespace="/">
+		<action name="addRoom" class="com.toy.action.AddRoomAction">
+			<result name="success">/work/addRoom.jsp</result>
+			<result name="error">/work/addRoomErr.jsp</result> <!-- 没修改异常界面 -->
+		</action>
+		<action name="deleteRoom" class="com.toy.action.DeleteRoomAction">
+			<result name="success" >/work/deleteRoom.jsp</result>
+			<result name="error">/work/deleteRoomErr.jsp</result>     <!-- 没修改异常界面 -->
+		</action>
+		<action name="updateRoom" class="com.toy.action.UpdateRoomAction">
+			<result name="success">/work/updateRoom.jsp</result>
+			<result name="error">/work/updateRoomErr.jsp</result>     <!-- 没修改异常界面 -->
+		</action>
+		<!--  删除中使用的查询 -->
+		<action name="selectRoomD" class="com.toy.action.SelectRoomAction">
+			<result name="success">/work/deleteRoom.jsp</result>
+			<result name="error">/work/deleteRoomErr.jsp</result>
+		</action>
+		<!-- 修改中使用的查询 -->
+		<action name="selectRoomU" class="com.toy.action.SelectRoomAction">
+			<result name="success">/work/updateRoom.jsp</result>
+			<result name="error">/work/updateRoomErr.jsp</result>
+		</action>
+		<action name="selectRoomById" class="com.toy.action.SelectRoomByIdAction">
+			<result name="success">/work/updateRoomFrame.jsp</result>
+			<result name="error">/work/updateRoomErr.jsp</result>
 		</action>
 	</package>
 	
-	<!-- 操作公司里面的会议室的增加、删除、修改 -->
-	<package name="operationRoom" extends="struts-default" namespace="/">
-		<action name="addRoom" class="com.toy.action.AddRoomAction">
-			<result name="success">/WEB-INF/room/addRoom.jsp</result>
-			<result name="error">/WEB-INF/room/addRoomF.jsp</result>
-		</action>
-		<action name="deleteRoom" class="com.toy.action.DeleteRoomAction">
-			<result name="success" >/WEB-INF/room/deleteRoom.jsp</result>
-			<result name="error">/WEB-INF/room/deleteRoomF.jsp</result>
-		</action>
-		<action name="updateRoom" class="com.toy.action.UpdateRoomAction">
-			<result name="success">/WEB-INF/room/updateRoom.jsp</result>
-			<result name="error">/WEB-INF/room/updateRoomF.jsp</result>
-		</action>
-	</package>
+	
+	
+	
+	
 	
 	<!-- 会议室的预约表的增加 -->
  	<package name="operationApplication" extends="struts-default" namespace="/">
@@ -61,5 +95,22 @@
 			<result name="error">/WEB-INF/date/dateErr.jsp</result>
 		</action>
 	</package>
+	
+	
+	
+	
+	
+	<!-- 用来分发网页，进行网页间的跳转 -->
+	<package name="dispatchAction" extends="struts-default" namespace="/">
+		<action name="dispatch" class="com.toy.action.dispatchAction">
+			<result name="addEmp">/WEB-INF/administrator/addEmployee.jsp</result>
+			<result name="deleteEmp">/WEB-INF/administrator/deleteEmployee.jsp</result>
+			<result name="updateEmp">/WEB-INF/administrator/updateEmployee.jsp</result>
+			<result name="addRoom">/WEB-INF/administrator/addRoom.jsp</result>
+			<result name="deleteRoom">/WEB-INF/administrator/deleteRoom.jsp</result>
+			<result name="updateRoom">/WEB-INF/administrator/updateRoom.jsp</result>	
+		</action>
+	</package>
+	
 	
 </struts>

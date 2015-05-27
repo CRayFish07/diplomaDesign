@@ -50,6 +50,7 @@
 		<mapper resource="com/toy/data/SelectRoomIdMapper.xml" />
 		<mapper resource="com/toy/data/SelectMeetingInfoMapper.xml"/>
 		<mapper resource="com/toy/data/SelectApplicationInfoMapper.xml"/>
+		<mapper resource="com/toy/data/SelectEmployeeMapper.xml"/>
 	</mappers>
 
 </configuration>

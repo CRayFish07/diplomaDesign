@@ -100,5 +100,4 @@ public class UpdateEmployeeAction extends ActionSupport{
 		}
 		return "error";
 	}
-
 }

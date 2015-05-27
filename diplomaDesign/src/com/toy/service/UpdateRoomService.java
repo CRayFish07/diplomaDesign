@@ -9,6 +9,11 @@ import com.toy.util.MyFactory;
 
 public class UpdateRoomService {
 	
+	/**
+	 * 传入整个Room信息，然后修改与之对应 的房间的信息
+	 * @param room
+	 * @return
+	 */
 	public boolean updateRoom(Room room){
 		SqlSession session = null;
 		try{

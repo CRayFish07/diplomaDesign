@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 
+<!-- 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,3 +28,16 @@
 	</body>
 </html>
 
+ -->
+ 
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<form action="selectEmployee" method="post">
+			<input type="text" name="name"/>
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>
