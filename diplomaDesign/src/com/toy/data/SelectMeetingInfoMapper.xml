@@ -9,15 +9,26 @@
 	<select id="selectMeetingList" parameterType="int" resultType="Meeting">
 		SELECT meeting_id, meeting_room_id, meeting_name,
 				log_name, meeting_start, meeting_end, 
-				meeting_order_time, meeting_mark
+				meeting_order_time, meeting_mark, dept_id
 		FROM meet_date
 		WHERE meeting_room_id = #{id} AND meeting_mark=0; <!-- meeting_mark=0表示该会议还没有举行 -->
 	</select>
 	
 	<!-- 选择出自己已经通过的申请，主要是对于部门经理，也就是要举行会议的人的审批 -->
 	<select id="selectPassMeetingList" parameterType="string" resultType="Meeting">
-		SELECT meeting_id, meeting_room_id, meeting_name, log_name, meeting_start, meeting_end, meeting_order_time, meeting_mark
+		SELECT meeting_id, meeting_room_id, meeting_name,
+				 log_name, meeting_start, meeting_end,
+				  meeting_order_time, meeting_mark, dept_id
 		FROM meet_date
 		WHERE log_name = #{logName} AND meeting_mark = 0;  <!-- logName代表申请该会议人的用户 -->
+	</select>
+	
+	<!-- 传入用户名和状态，查询相关状态的信息 -->
+	<select id="selectMeeingInfoList" parameterType="hashmap" resultType="Meeting">
+		SELECT meeting_id, meeting_room_id, meeting_name,
+				 log_name, meeting_start, meeting_end,
+				  meeting_order_time, meeting_mark, dept_id
+		FROM meet_date
+		WHERE log_name = #{logName} AND meeting_mark = #{status};
 	</select>
 </mapper>

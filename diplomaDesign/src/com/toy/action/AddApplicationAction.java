@@ -1,5 +1,10 @@
 package com.toy.action;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import com.toy.model.Application;
@@ -9,7 +14,7 @@ public class AddApplicationAction extends ActionSupport{
 	private String start;
 	private String end;
 	private String remarks;
-	private String username;
+
 	public String getStart() {
 		return start;
 	}
@@ -28,21 +33,21 @@ public class AddApplicationAction extends ActionSupport{
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	
 	@Override
 	public String execute() throws Exception{
+		//在session中得到用户名
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpSession session = request.getSession();
+		String userName = (String)session.getAttribute("name");
+//		System.out.println( userName );  //测试数据
+		
 		// to do something here
 		Application application = new Application();
 		application.setApplication_start(start);
 		application.setApplication_end(end);
 		application.setApplication_remarks(remarks);
-		application.setLog_name(username);
+		application.setLog_name(userName);
 		
 		AddApplicationService addApplication = new AddApplicationService();
 		if( addApplication.addApplication(application) ){

@@ -2,6 +2,7 @@ package com.toy.action;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -30,7 +31,11 @@ public class LogAction extends ActionSupport{
 	public String execute() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest(); //得到http中的request中的信息
 		String radio = request.getParameter("radio"); //获取选项框的内容
-		System.out.println(radio);
+//		System.out.println(radio);  //测试数据
+		
+		HttpSession session = request.getSession();    //得到session,将用户名和密码放入到里面
+		session.setAttribute("name", name);
+		session.setAttribute("password", password);
 		
 		if("admin".equals(radio)){ //返回管理员的的登录字符串
 			return adminLog();

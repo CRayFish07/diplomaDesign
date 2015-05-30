@@ -23,11 +23,12 @@ import com.toy.util.MyFactory;
  */
 
 public class GetApplicationInfoService {
+	
 	/**
 	 * 通过传入需要查询的状态和用户名，能够得到要求的信息集合
 	 * @param state 
 	 * @param logName
-	 * @return 信息集合
+	 * @return 信息集合 
 	 */
 	public ArrayList<Application> getApplicationInfoList(int state, String logName){
 		SqlSession session = null;
@@ -76,6 +77,33 @@ public class GetApplicationInfoService {
 			System.out.println("会议申请通过查询异常");
 			e.printStackTrace();
 			System.out.println("会议申请通过查询异常");
+		}finally{
+			session.close();
+		}
+		return null;
+	}
+	
+	/**
+	 * 传入用户名和状态，得到与该状态对应的信息
+	 * @param info
+	 * @return
+	 */
+	public ArrayList<Meeting> getMeetingInfoList(Map<String, String> info){
+		SqlSession session = null;
+		try{
+			SqlSessionFactory sessionFactory = MyFactory.getFactory();
+			session = sessionFactory.openSession();
+			SelectMeetingInfoMapper meetingInfo = session.getMapper(SelectMeetingInfoMapper.class);
+			ArrayList<Meeting> listInfo = meetingInfo.selectMeeingInfoList(info);
+			
+			if( listInfo != null ){
+				return listInfo;
+			}
+			
+		}catch(Exception e){
+			System.out.println("根据状态查询会议异常");
+			e.printStackTrace();
+			System.out.println("根据状态查询会议异常");
 		}finally{
 			session.close();
 		}

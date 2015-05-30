@@ -8,6 +8,7 @@
 	<!-- 修改编码方式，改用utf-8编码 -->
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant> 
 	
+	<!-- 用户登录跳转到不同的角色的页面 -->
 	<package name="log" extends="struts-default" namespace="/">
 		<action name="log" class="com.toy.action.LogAction">
 			<result name="admin">/WEB-INF/administrator/administrator.jsp</result>
@@ -17,6 +18,7 @@
 			<result name="error">/WEB-INF/log/logErr.jsp</result>
 		</action>		
 	</package>
+	
 	
 	<!-- 操作公司职员增加、删除、修改 、查询-->
 	<package name="operationEmployee" extends="struts-default" namespace="/">
@@ -46,7 +48,6 @@
 			<result name="success">/work/updateFrame.jsp</result>
 			<result name="error">/work/updateErr.jsp</result>
 		</action>
-		
 	</package>
 	
 	<!-- 操作公司里面的会议室的增加、删除、修改、查询 -->
@@ -81,18 +82,24 @@
 	
 	
 	
-	
-	
-	
-	<!-- 会议室的预约表的增加 -->
+		
+	<!-- 会议室的预约表的增加，和申请下来的会议的管理 -->
  	<package name="operationApplication" extends="struts-default" namespace="/">
 		<action name="addApplication" class="com.toy.action.AddApplicationAction">
-			<result name="success">/WEB-INF/meetApplication/addApplication.jsp</result>
-			<result name="error">/WEB-INF/meetApplication/addErr.jsp</result>		
+			<result name="success">/workD/addApplication.jsp</result>
+			<result name="error">/workD/addApplicationErr.jsp</result>		
 		</action>
 		<action name="addMeeting" class="com.toy.action.AddMeetingAction" >
 			<result name="success">/WEB-INF/date/date.jsp</result>
 			<result name="error">/WEB-INF/date/dateErr.jsp</result>
+		</action>
+		<action name="selectMeeing" class="com.toy.action.SelectMeetingAction">
+			<result name="success">/workD/passApplication.jsp</result>
+			<result name="error">/workD/passApplicationErr.jsp</result>
+		</action>
+		<action name="selectApplication" class="com.toy.action.SelectApplicationAction">
+			<result name="success">/workD/unPassApplication.jsp</result>
+			<result name="error">/workD/unPassApplicationErr.jsp</result>
 		</action>
 	</package>
 	
@@ -108,7 +115,10 @@
 			<result name="updateEmp">/WEB-INF/administrator/updateEmployee.jsp</result>
 			<result name="addRoom">/WEB-INF/administrator/addRoom.jsp</result>
 			<result name="deleteRoom">/WEB-INF/administrator/deleteRoom.jsp</result>
-			<result name="updateRoom">/WEB-INF/administrator/updateRoom.jsp</result>	
+			<result name="updateRoom">/WEB-INF/administrator/updateRoom.jsp</result>
+			<result name="addApp">/WEB-INF/deptManager/deptManager.jsp</result>
+			<result name="passApp">/WEB-INF/deptManager/passApplication.jsp</result>
+			<result name="unPassApp">/WEB-INF/deptManager/unPassApplication.jsp</result>
 		</action>
 	</package>
 	

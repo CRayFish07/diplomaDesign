@@ -25,6 +25,12 @@ public class dispatchAction extends ActionSupport{
 			return "updateRoom";
 		}else if("addEmp".equals(mark)){
 			return "addEmp";
+		}else if("addApp".equals(mark)){
+			return "addApp";
+		}else if("passApp".equals(mark)){
+			return "passApp";
+		}else if("unPassApp".equals(mark)){
+			return "unPassApp";
 		}
 		return null;
 	}

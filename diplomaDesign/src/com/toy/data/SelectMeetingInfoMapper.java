@@ -1,6 +1,9 @@
 package com.toy.data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.toy.model.Meeting;
 
 public interface SelectMeetingInfoMapper {
@@ -17,4 +20,11 @@ public interface SelectMeetingInfoMapper {
 	 * @return 
 	 */
 	ArrayList<Meeting> selectPassMeetingList(String logName);
+	
+	/**
+	 * 通过HashMap传入用户名和状态，查询相关的会议
+	 * @param info
+	 * @return
+	 */
+	ArrayList<Meeting> selectMeeingInfoList(Map<String, String> info);
 }
