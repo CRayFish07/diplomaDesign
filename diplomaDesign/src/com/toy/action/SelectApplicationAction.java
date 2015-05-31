@@ -38,15 +38,14 @@ public class SelectApplicationAction extends ActionSupport{
 		String logName = (String)session.getAttribute("name");
 		
 		GetApplicationInfoService service = new GetApplicationInfoService();
-		ArrayList<Application> temp = service.getApplicationInfoList(status, logName); 
+		ArrayList<Application> temp = service.getApplicationInfoList(0, logName);
 		
-		System.out.println("返回的数据" + temp.get(0).getApplication_remarks() + "userName:" + logName + " " + status );
-		
+//		System.out.println("返回的数据" + temp.get(0).getApplication_remarks() + "userName:" + logName + " " + status );
+//		System.out.println( temp );
 		if( temp != null ){
 			this.setApplicationList(temp);
 			return "success";
 		}
-		
 		return "error";
 	}
 

@@ -48,7 +48,7 @@
 				<td><s:property value="#list.application_time"/></td>
 				<td><s:property value="#list.log_name"/></td>
 				<td>
-					<a href="????">撤销</a>
+					<a href="deleteApplicationU?id=${list.application_id}">撤销</a>
 				</td>
 			</tr>
 			</s:iterator>

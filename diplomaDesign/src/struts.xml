@@ -94,12 +94,23 @@
 			<result name="error">/WEB-INF/date/dateErr.jsp</result>
 		</action>
 		<action name="selectMeeing" class="com.toy.action.SelectMeetingAction">
-			<result name="success">/workD/passApplication.jsp</result>
+			<result name="UnTake">/workD/passApplication.jsp</result>
+			<result name="Taken">/workD/passApplicationTaken.jsp</result>
 			<result name="error">/workD/passApplicationErr.jsp</result>
 		</action>
 		<action name="selectApplication" class="com.toy.action.SelectApplicationAction">
 			<result name="success">/workD/unPassApplication.jsp</result>
 			<result name="error">/workD/unPassApplicationErr.jsp</result>
+		</action>
+		<!-- 未通过会议中使用的删除 -->
+		<action name="deleteApplicationU" class="com.toy.action.DeleteApplicationAction">
+			<result name="success">/workD/unPassApplication.jsp</result>
+			<result name="error">/workD/unPassApplicationErr.jsp</result>
+		</action>
+		<!-- 通过的会议中使用的删除 -->
+		<action name="deleteApplicationY" class="com.toy.action.DeleteApplicationAction">
+			<result name="success">/workD/passApplication.jsp</result>
+			<result name="success">/workD/passApplicationErr.jsp</result>
 		</action>
 	</package>
 	

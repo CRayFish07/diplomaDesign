@@ -41,6 +41,7 @@
 		<mapper resource="com/toy/data/EmployeeLogMapper.xml"/>
 		<mapper resource="com/toy/data/AddEmployeeMapper.xml"/>
 		<mapper resource="com/toy/data/DeleteEmployeeMapper.xml"/>
+		<mapper resource="com/toy/data/DeleteApplicationMapper.xml" />
 		<mapper resource="com/toy/data/UpdateEmployeeMapper.xml"/>
 		<mapper resource="com/toy/data/AddRoomMapper.xml" />
 		<mapper resource="com/toy/data/DeleteRoomMapper.xml" />

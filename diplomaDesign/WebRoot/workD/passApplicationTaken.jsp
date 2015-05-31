@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+ <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,6 @@
 					<th>会议主题</th>
 					<th>申请时间</th>
 					<th>申请人</th>
-					<th>操作</th>
 				</tr>
 			</thead>
 			<s:iterator value="meetingList" var="list">
@@ -45,13 +44,9 @@
 				<td><s:property value="#list.meeting_name"/></td>
 				<td><s:property value="#list.meeting_order_time"/></td>
 				<td><s:property value="#list.log_name"/></td>
-				<td>
-					<a href="????">发消息</a>&nbsp;&nbsp;<a href="????">撤销</a>
-				</td>
 			</tr>
 			</s:iterator>
 		</table>
 	
 	</body>
-
 </html>

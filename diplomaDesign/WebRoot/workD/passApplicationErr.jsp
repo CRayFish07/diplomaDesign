@@ -14,7 +14,7 @@
 	</head>
 
 	<body>
-		<form class="form-inline definewidth m20" action="????" method="get" >
+		<form class="form-inline definewidth m20" action="selectMeeing" method="get" >
 			<div class="control-group" >
 				<label class="laber_from" >申请状态：</label>
 				<div class="controls" >

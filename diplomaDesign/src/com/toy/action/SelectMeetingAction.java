@@ -57,7 +57,11 @@ public class SelectMeetingAction extends ActionSupport{
 		
 		if( temp != null ){
 			this.setMeetingList( temp );
-			return "success";
+			if( "0".equals(status) ){ //当用户选择未举行的会议时
+				return "UnTake";
+			}else{					  //当用户选择已经举行的会议和取消的会议时
+				return "Taken";
+			}
 		}
 		return "error";
 	}
