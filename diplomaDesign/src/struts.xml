@@ -112,6 +112,13 @@
 			<result name="success">/workD/passApplication.jsp</result>
 			<result name="success">/workD/passApplicationErr.jsp</result>
 		</action>
+		
+		<!-- 修改会议为取消状态 -->
+		<action name="updateMeetingToCancel" class="com.toy.action.UpdateMeetingAction">
+			<result name="success">/workD/passApplication.jsp</result>
+			<result name="error">/workD/passApplicationErr.jsp</result>
+		</action>
+		
 	</package>
 	
 	

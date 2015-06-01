@@ -53,7 +53,7 @@ public class SelectMeetingAction extends ActionSupport{
 		GetApplicationInfoService service = new GetApplicationInfoService();
 		ArrayList<Meeting> temp = service.getMeetingInfoList(info);
 		
-		System.out.println( temp.get(0).getMeeting_name());
+//		System.out.println( temp.get(0).getMeeting_name()); // ≤‚ ‘ ˝æ›
 		
 		if( temp != null ){
 			this.setMeetingList( temp );

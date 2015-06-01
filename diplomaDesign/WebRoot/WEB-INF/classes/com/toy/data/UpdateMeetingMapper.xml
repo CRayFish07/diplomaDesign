@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.toy.data.UpdateMeetingMapper">
+	<!-- 取消会议，meeting_mark = 2 -->
+	<update id="updateMeetingCancel" parameterType="int">
+		update meet_date
+		SET meeting_mark = 2
+		WHERE meeting_id = #{id};
+	</update>
+	
+	
+	<!-- 标记为已经举行的会议 -->
+	<update id="updateMeetingTaken" parameterType="int">
+		update meet_date
+		SET meeting_mark = 1
+		WHERE meeting_id = #{id};
+	</update>
+</mapper>

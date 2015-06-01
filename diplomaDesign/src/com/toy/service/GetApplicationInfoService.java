@@ -25,7 +25,7 @@ import com.toy.util.MyFactory;
 public class GetApplicationInfoService {
 	
 	/**
-	 * 通过传入需要查询的状态和用户名，能够得到要求的信息集合
+	 * 通过传入需要查询的状态和用户名，能够得到要求的信息集合，查询Application表
 	 * @param state 
 	 * @param logName
 	 * @return 信息集合 
@@ -56,7 +56,7 @@ public class GetApplicationInfoService {
 	}
 	
 	/**
-	 * 输入要查询的申请人的用户名，得到该用户申请会议通过的信息链表
+	 * 输入要查询的申请人的用户名，得到该用户申请会议通过的信息链表，查询
 	 * @param logName
 	 * @return Meeting Model List
 	 */
