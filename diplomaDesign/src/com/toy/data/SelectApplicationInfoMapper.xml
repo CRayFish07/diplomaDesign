@@ -18,4 +18,18 @@
 		FROM application
 		WHERE feedback=#{state} AND log_name=#{logName};
 	</select>
+	
+	<select id="selectApplicationByTime" parameterType="string" resultType="Application">
+		SELECT application_id, application_start, application_end, application_remarks, application_time,
+				feedback, log_name
+		FROM application
+		WHERE application_time >= #{time} AND feedback = 0;
+	</select>
+	
+	<select id="selectApplicationAll" resultType="Application">
+		SELECT application_id, application_start, application_end, application_remarks, application_time,
+				feedback, log_name
+		FROM application
+		WHERE feedback = 0;   <!-- 0代表数据为未处理的数据 -->
+	</select>
 </mapper>

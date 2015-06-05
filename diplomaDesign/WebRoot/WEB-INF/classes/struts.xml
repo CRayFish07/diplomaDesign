@@ -6,7 +6,9 @@
 	
 <struts>
 	<!-- 修改编码方式，改用utf-8编码 -->
-	<constant name="struts.i18n.encoding" value="UTF-8"></constant> 
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 动态方法调用打开 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/> 
 	
 	<!-- 用户登录跳转到不同的角色的页面 -->
 	<package name="log" extends="struts-default" namespace="/">
@@ -16,6 +18,7 @@
 			<result name="employee">/WEB-INF/employee/employee.jsp</result>
 			<result name="deptManager">/WEB-INF/deptManager/deptManager.jsp</result>
 			<result name="error">/WEB-INF/log/logErr.jsp</result>
+			<result name="logout">/WEB-INF/log/log.jsp</result>
 		</action>		
 	</package>
 	
@@ -101,6 +104,8 @@
 		<action name="selectApplication" class="com.toy.action.SelectApplicationAction">
 			<result name="success">/workD/unPassApplication.jsp</result>
 			<result name="error">/workD/unPassApplicationErr.jsp</result>
+			<result name="ManagerApp">/workM/checkApplication.jsp</result>
+			<result name="ManagerError">/workM/checkApplicationErr.jsp</result>
 		</action>
 		<!-- 未通过会议中使用的删除 -->
 		<action name="deleteApplicationU" class="com.toy.action.DeleteApplicationAction">
@@ -137,6 +142,7 @@
 			<result name="addApp">/WEB-INF/deptManager/deptManager.jsp</result>
 			<result name="passApp">/WEB-INF/deptManager/passApplication.jsp</result>
 			<result name="unPassApp">/WEB-INF/deptManager/unPassApplication.jsp</result>
+			<result name="checkApp">/WEB-INF/manager/manager.jsp</result>
 		</action>
 	</package>
 	

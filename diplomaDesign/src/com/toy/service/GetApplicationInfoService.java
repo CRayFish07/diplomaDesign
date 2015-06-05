@@ -109,4 +109,67 @@ public class GetApplicationInfoService {
 		}
 		return null;
 	}
+	
+	/**
+	 * 在总经理的界面，当输入时间的时候会查询改时间之后的会议
+	 * @param time
+	 * @return
+	 */
+	public ArrayList<Application> getApplicationByTime(String time){
+		return null;
+	}
+	
+	/**
+	 * 在总经理的界面，得到全部没有审阅的申请信息，返回到主页面
+	 * @return
+	 */
+	public ArrayList<Application> getApplicationAll(){
+		SqlSession session = null;
+		try{
+			SqlSessionFactory sessionFactory = MyFactory.getFactory();
+			session = sessionFactory.openSession();
+			
+			SelectApplicationInfoMapper selectApplication = session.getMapper(SelectApplicationInfoMapper.class);
+			ArrayList<Application> infoList = selectApplication.selectApplicationAll();
+			
+			if( infoList != null ){
+				return infoList;
+			}
+		}catch(Exception e){
+			System.out.println("总经理界面查询未处理申请表信息异常");
+			e.printStackTrace();
+			System.out.println("总经理界面查询未处理申请表信息异常");
+		}finally{
+			session.close();
+		}
+		return null;
+	}
+	
+	/**
+	 * 传入id，得到id对应的Application的单条信息
+	 * @param id
+	 * @return
+	 */
+	public Application getApplicationById(int id){
+		SqlSession session = null;
+		
+		try{
+			SqlSessionFactory sessionFactory = MyFactory.getFactory();
+			session = sessionFactory.openSession();
+			SelectApplicationInfoMapper selectApplication = session.getMapper(SelectApplicationInfoMapper.class);
+			
+			Application info = selectApplication.selectOneApplicationInfo(id);
+			
+			if( info != null){
+				return info;
+			}
+		}catch(Exception e){
+			System.out.println("通过id查询Application异常");
+			e.printStackTrace();
+			System.out.println("通过id查询Application异常");
+		}finally{
+			session.close();
+		}
+		return null;
+	}
 }

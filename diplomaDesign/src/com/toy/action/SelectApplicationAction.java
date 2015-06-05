@@ -14,10 +14,19 @@ import com.toy.service.GetApplicationInfoService;
 public class SelectApplicationAction extends ActionSupport{
 	//需要查询的状态
 	private int status;
+	//用于查询使用的时间
+	private String time;
+	
 	//用于返回查询的申请未通过的状态信息集
 	private ArrayList<Application> applicationList;
 	
 	//	getter && setter
+	public String getTime(){
+		return this.time;
+	}
+	public void setTime(String time){
+		this.time = time;
+	}
 	public int getStatus() {
 		return status;
 	}
@@ -48,5 +57,28 @@ public class SelectApplicationAction extends ActionSupport{
 		}
 		return "error";
 	}
+	
+	/**
+	 * 通过传入时间来进行查询该时间段之后的申请，当数据空的时候，则代表查询全部未处理的数据
+	 * @param time
+	 * @return
+	 */
+	public String checkApplicationByTime(){
+		
+		GetApplicationInfoService getApplication = new GetApplicationInfoService();
+		ArrayList<Application> infoList = null;
+		if( "".equals(this.time) ){
 
+//			System.out.println("test1");  //测试数据
+			infoList = getApplication.getApplicationAll();
+			if( infoList != null ){
+				this.setApplicationList(infoList);
+				return "ManagerApp";
+			}
+		}else{
+			//填充时间，放在这里处理数据
+			
+		}
+		return "ManagerError";
+	}
 }

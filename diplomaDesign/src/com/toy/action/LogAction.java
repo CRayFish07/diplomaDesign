@@ -86,4 +86,13 @@ public class LogAction extends ActionSupport{
 		}
 		return "error";
 	}
+	
+//--------------------------------华丽的分割线------------------------------
+	public String logOut(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpSession session = request.getSession();
+		session.setAttribute("name", null);  //清除用户名
+		session.setAttribute("password", null); //清除密码
+		return "logout";
+	}
 }

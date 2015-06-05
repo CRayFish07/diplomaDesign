@@ -63,6 +63,9 @@
             		<li><a href="dispatch?mark=updateRoom" ><i class="glyph-icon icon-chevron-right"></i>修改房间</a></li>
             	</ul>
             </li>
+            <li class="childUlLi">
+            	<a href="log!logOut"><i class="glyph-icon icon-reorder"></i>退出</a>
+            </li>
             
         </ul>
     </div>

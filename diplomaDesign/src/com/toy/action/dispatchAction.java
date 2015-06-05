@@ -31,6 +31,8 @@ public class dispatchAction extends ActionSupport{
 			return "passApp";
 		}else if("unPassApp".equals(mark)){
 			return "unPassApp";
+		}else if("checkApp".equals(mark)){
+			return "checkApp";
 		}
 		return null;
 	}

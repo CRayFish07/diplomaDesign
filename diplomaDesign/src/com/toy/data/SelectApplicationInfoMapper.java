@@ -20,4 +20,17 @@ public interface SelectApplicationInfoMapper {
 	 * @return 符合条件的结果集
 	 */
 	ArrayList<Application> selectApplicationInfoList(Map<String, Object> info);
+	
+	/**
+	 * 在总经理页面，查询传入的时间段之后的申请信息
+	 * @param Time
+	 * @return
+	 */
+	ArrayList<Application> selectApplicationByTime(String time);
+	
+	/**
+	 * 在总经理页面，不传入任何信息，返回所有符合条件的信息，即没有处理的信息
+	 * @return
+	 */
+	ArrayList<Application> selectApplicationAll();
 }

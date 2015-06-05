@@ -39,7 +39,9 @@
             		<li><a href="dispatch?mark=unPassApp" ><i class="glyph-icon icon-chevron-right"></i>未通过的会议</a></li>
             	</ul>
             </li>
-            	
+            <li class="childUlLi">
+            	<a href="log!logOut"><i class="glyph-icon icon-reorder"></i>退出</a>
+            </li>
         </ul>
     </div>
     <!--菜单-->
