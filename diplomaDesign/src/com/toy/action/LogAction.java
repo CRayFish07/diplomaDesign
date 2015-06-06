@@ -29,13 +29,16 @@ public class LogAction extends ActionSupport{
 	
 	@Override
 	public String execute() throws Exception{
+		LogService ls = new LogService();  
 		HttpServletRequest request = ServletActionContext.getRequest(); //得到http中的request中的信息
 		String radio = request.getParameter("radio"); //获取选项框的内容
 //		System.out.println(radio);  //测试数据
+		int dept = ls.getDeptId(name);
 		
 		HttpSession session = request.getSession();    //得到session,将用户名和密码放入到里面
 		session.setAttribute("name", name);
 		session.setAttribute("password", password);
+		session.setAttribute("department", dept);		//将部门的id放入到session
 		
 		if("admin".equals(radio)){ //返回管理员的的登录字符串
 			return adminLog();
@@ -88,11 +91,13 @@ public class LogAction extends ActionSupport{
 	}
 	
 //--------------------------------华丽的分割线------------------------------
+//-------------------------------------------------------------------------
 	public String logOut(){
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpSession session = request.getSession();
 		session.setAttribute("name", null);  //清除用户名
 		session.setAttribute("password", null); //清除密码
+		session.setAttribute("department", null); //清除部门信息
 		return "logout";
 	}
 }

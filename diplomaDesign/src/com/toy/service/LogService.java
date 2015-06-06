@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.toy.util.MyFactory;
 import com.toy.data.EmployeeLogMapper;
 import com.toy.data.ManagerLogMapper;
+import com.toy.data.SelectEmployeeMapper;
 import com.toy.model.verification.UserLogVerify;
 
 public class LogService{
@@ -100,5 +101,32 @@ public class LogService{
 			session.close();
 		}
 		return false;
+	}
+	
+	/**
+	 * 传入用户名，然后得到该用户所对应的部门的id
+	 * @param logName
+	 * @return
+	 */
+	public int getDeptId(String logName){
+		SqlSession session = null;
+		try{
+			SqlSessionFactory sessionFactory = MyFactory.getFactory();
+			session = sessionFactory.openSession();
+			
+			SelectEmployeeMapper selectEmployee = session.getMapper(SelectEmployeeMapper.class);
+			int reNum = selectEmployee.getDeptId(logName);
+			
+			if( reNum > 0){ 	//返回部门id，没有部门的部门号为负值和0
+				return reNum;
+			}
+		}catch(Exception e){
+			System.out.println("查询用户的部门id异常");
+			e.printStackTrace();
+			System.out.println("查询用户的部门id异常");
+		}finally{
+			session.close();
+		}
+		return -1;   // 异常的时候返回-1
 	}
 }

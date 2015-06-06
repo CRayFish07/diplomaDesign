@@ -22,4 +22,16 @@
 		from employee
 		where emp_id = #{id};
 	</select>
+	
+	<select id="getDeptId" parameterType="string" resultType="int">
+		select employee.emp_dept_id 
+		FROM employee, user_log
+		where employee.emp_id = user_log.log_emp_id AND user_log.log_name = #{logName};
+	</select>
+	
+	<select id="getDeptName" parameterType="int" resultType="string">
+		select department.dept_name
+		from department
+		where department.dept_id = #{id};
+	</select>
 </mapper>

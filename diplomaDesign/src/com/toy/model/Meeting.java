@@ -9,10 +9,17 @@ public class Meeting {
 	private String meeting_end;
 	private String meeting_order_time;
 	private short meeting_mark; //此处定义为shortl类型，不知道和mysql数据库中的TINYINT一样不？
+	private int dept_id;
 
 	// getter && setter
 	public int getMeeting_id() {
 		return meeting_id;
+	}
+	public int getDept_id() {
+		return dept_id;
+	}
+	public void setDept_id(int deptId) {
+		dept_id = deptId;
 	}
 	public void setMeeting_id(int meetingId) {
 		meeting_id = meetingId;

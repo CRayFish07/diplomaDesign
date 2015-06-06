@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.struts2.ServletActionContext;
+
 import com.toy.util.MyFactory;
 import com.toy.data.AddMeetingMapper;
 import com.toy.data.SelectApplicationInfoMapper;
@@ -198,6 +203,9 @@ public class AddMeetingService {
 	 */
 	public boolean insertMeetingInfo(Application application){
 		Meeting meeting = new Meeting();
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpSession httpSession = request.getSession();
+		int deptId = (Integer)httpSession.getAttribute("department");
 		int roomId = -1; //用来记录能够插入房间的房间号，-1表示没有房间能够插入
 		String startTime = application.getApplication_start();
 		String endTime = application.getApplication_end();
@@ -215,6 +223,7 @@ public class AddMeetingService {
 			meeting.setMeeting_end(endTime);				//结束时间
 			meeting.setMeeting_order_time(application.getApplication_time()); //会议申请时间
 			meeting.setMeeting_mark((short)0);  //因为类型不匹配，需要进行转换，将int 强制转换成 short
+			meeting.setDept_id(deptId);         //设置部门id
 			
 			// 调用AddMeetingMapper(meeting)向数据库中插入数据
 			SqlSession session = null;

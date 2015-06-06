@@ -8,7 +8,7 @@
 	<insert id="insertMeeting" parameterType="Meeting" >
 		INSERT INTO meet_date(meeting_id, meeting_room_id, meeting_name, log_name, meeting_start, meeting_end,
 											meeting_order_time, meeting_mark, dept_id)
-		VALUES(NULL, #{meeting_room_id}, #{meeting_name}, #{log_name}, #{meeting_start}, #{meeting_end}, CURRENT_TIME, 0, 0);
+		VALUES(NULL, #{meeting_room_id}, #{meeting_name}, #{log_name}, #{meeting_start}, #{meeting_end}, CURRENT_TIME, 0, #{dept_id});
 	</insert>
 	
 	<update id="updateApplicationState" parameterType="map">

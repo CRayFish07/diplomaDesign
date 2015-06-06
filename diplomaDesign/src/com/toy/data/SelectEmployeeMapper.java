@@ -24,4 +24,18 @@ public interface SelectEmployeeMapper {
 	 * @return
 	 */
 	Employee getEmployeeById(int id);
+	
+	/**
+	 * 传入用户名，得到用户名所在的部门id
+	 * @param logName
+	 * @return
+	 */
+	int getDeptId(String logName);
+	
+	/**
+	 * 传入部门id，得到该id的部门名字
+	 * @param id
+	 * @return
+	 */
+	String getDeptName(int id);
 }
