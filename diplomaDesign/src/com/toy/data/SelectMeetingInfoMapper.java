@@ -15,6 +15,13 @@ public interface SelectMeetingInfoMapper {
 	ArrayList<Meeting> selectMeetingList(int id);
 	
 	/**
+	 * 传入会议的id，然后得到会议的的信息
+	 * @param id
+	 * @return
+	 */
+	Meeting selectSingleMeeting(int id);
+	
+	/**
 	 * 传入申请会议的人的用户名，返回该用户申请会议通过的记录
 	 * @param logName
 	 * @return 
@@ -26,5 +33,12 @@ public interface SelectMeetingInfoMapper {
 	 * @param info
 	 * @return
 	 */
-	ArrayList<Meeting> selectMeeingInfoList(Map<String, String> info);
+	ArrayList<Meeting> selectMeetingInfoList(Map<String, String> info);
+	
+	/**
+	 * 传入部门id，得到该部门全部的会议，并且是还未举行的id,或者是全部的会议，包括已经举行的
+	 * @param deptId
+	 * @return
+	 */
+	ArrayList<Meeting> selectMeetingInfoListE(int deptId);
 }

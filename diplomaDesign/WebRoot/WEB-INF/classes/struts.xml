@@ -100,6 +100,8 @@
 			<result name="UnTake">/workD/passApplication.jsp</result>
 			<result name="Taken">/workD/passApplicationTaken.jsp</result>
 			<result name="error">/workD/passApplicationErr.jsp</result>
+			<result name="deptMeet">/workE/deptMeeting.jsp</result>
+			<result name="deptMeetErr">/workE/deptMeetingErr.jsp</result>
 		</action>
 		<action name="selectApplication" class="com.toy.action.SelectApplicationAction">
 			<result name="success">/workD/unPassApplication.jsp</result>
@@ -143,6 +145,8 @@
 			<result name="passApp">/WEB-INF/deptManager/passApplication.jsp</result>
 			<result name="unPassApp">/WEB-INF/deptManager/unPassApplication.jsp</result>
 			<result name="checkApp">/WEB-INF/manager/manager.jsp</result>
+			<result name="deptMeet">/WEB-INF/employee/employee.jsp</result>
+			<result name="deptMeetOurs">/WEB-INF/employee/employeeOurs.jsp</result>
 		</action>
 	</package>
 	

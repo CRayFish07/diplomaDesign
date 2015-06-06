@@ -24,11 +24,27 @@
 	</select>
 	
 	<!-- 传入用户名和状态，查询相关状态的信息 -->
-	<select id="selectMeeingInfoList" parameterType="hashmap" resultType="Meeting">
+	<select id="selectMeetingInfoList" parameterType="hashmap" resultType="Meeting">
 		SELECT meeting_id, meeting_room_id, meeting_name,
 				 log_name, meeting_start, meeting_end,
 				  meeting_order_time, meeting_mark, dept_id
 		FROM meet_date
 		WHERE log_name = #{logName} AND meeting_mark = #{status};
+	</select>
+	
+	<select id="selectSingleMeeting" parameterType="int" resultType="Meeting">
+		SELECT meeting_id, meeting_room_id, meeting_name,
+				log_name, meeting_start, meeting_end, 
+				meeting_order_time, meeting_mark, dept_id
+		FROM meet_date
+		WHERE meeting_room_id = #{id};
+	</select>
+	
+	<select id="selectMeetingInfoListE" parameterType="int" resultType="Meeting">
+		SELECT meeting_id, meeting_room_id, meeting_name,
+				log_name, meeting_start, meeting_end, 
+				meeting_order_time, meeting_mark, dept_id
+		FROM meet_date
+		WHERE meeting_mark=0 and dept_id = #{dept_id};
 	</select>
 </mapper>

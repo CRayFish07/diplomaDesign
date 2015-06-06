@@ -49,6 +49,7 @@ public class SelectMeetingAction extends ActionSupport{
 		info.put("status", status);
 		
 //		System.out.println(name + "   " + status); //测试数据
+		System.out.println(status); //测试数据 
 		
 		GetApplicationInfoService service = new GetApplicationInfoService();
 		ArrayList<Meeting> temp = service.getMeetingInfoList(info);
@@ -65,5 +66,35 @@ public class SelectMeetingAction extends ActionSupport{
 		}
 		return "error";
 	}
+	
+	/**
+	 * 传入会议的id，得到该会议的各种信息
+	 * @param id
+	 * @return
+	 */
+	public String getMeetingById(int id){
+		
+		return null;
+	}
+	
+	/**
+	 * 得到自己部门 的会议
+	 * @return
+	 */
+	public String getMeetingInfoList(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpSession session = request.getSession();
+		int deptId = (Integer)session.getAttribute("department");
+		
+		GetApplicationInfoService getApplication = new GetApplicationInfoService();
+		ArrayList<Meeting> info = getApplication.getMeetingInfoList(deptId);
+		
+		if( info != null){
+			this.setMeetingList(info);
+			return "deptMeet";
+		}
+		return "deptMeetErr";
+	}
+	
 	
 }

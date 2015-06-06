@@ -94,7 +94,7 @@ public class GetApplicationInfoService {
 			SqlSessionFactory sessionFactory = MyFactory.getFactory();
 			session = sessionFactory.openSession();
 			SelectMeetingInfoMapper meetingInfo = session.getMapper(SelectMeetingInfoMapper.class);
-			ArrayList<Meeting> listInfo = meetingInfo.selectMeeingInfoList(info);
+			ArrayList<Meeting> listInfo = meetingInfo.selectMeetingInfoList(info);
 			
 			if( listInfo != null ){
 				return listInfo;
@@ -167,6 +167,61 @@ public class GetApplicationInfoService {
 			System.out.println("通过id查询Application异常");
 			e.printStackTrace();
 			System.out.println("通过id查询Application异常");
+		}finally{
+			session.close();
+		}
+		return null;
+	}
+	
+	/**
+	 * 传入会议的id，查询该id对应的会议信息
+	 * @param id
+	 * @return
+	 */
+	public Meeting getSingleMeeting(int id){
+		SqlSession session = null;
+		
+		try{
+			SqlSessionFactory sessionFactory = MyFactory.getFactory();
+			session = sessionFactory.openSession();
+			
+			SelectMeetingInfoMapper selectMeeting = session.getMapper(SelectMeetingInfoMapper.class);
+			Meeting temp = selectMeeting.selectSingleMeeting(id);
+			
+			if( temp != null){
+				return temp;
+			}
+		}catch(Exception e){
+			System.out.println("通过id查询Meeting异常");
+			e.printStackTrace();
+			System.out.println("通过id查询Meeting异常");
+		}finally{
+			session.close();
+		}
+		return null;
+	}
+	
+	/**
+	 * 传入自己部门的id，查找自己部门的全部会议
+	 * @param deptId
+	 * @return
+	 */
+	public ArrayList<Meeting> getMeetingInfoList(int deptId){
+		SqlSession session = null;
+		try{
+			SqlSessionFactory sessionFactory = MyFactory.getFactory();
+			session = sessionFactory.openSession();
+			
+			SelectMeetingInfoMapper selectMeeting = session.getMapper(SelectMeetingInfoMapper.class);
+			ArrayList<Meeting> meetList = selectMeeting.selectMeetingInfoListE(deptId);
+			
+			if( meetList != null){
+				return meetList;
+			}
+		}catch(Exception e){
+			System.out.println("员工查询自己部门的未举行的会议异常");
+			e.printStackTrace();
+			System.out.println("员工查询自己部门的未举行的会议异常");			
 		}finally{
 			session.close();
 		}
