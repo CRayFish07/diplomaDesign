@@ -42,6 +42,9 @@
             <li class="childUlLi">
             	<a href="log!logOut"><i class="glyph-icon icon-reorder"></i>退出</a>
             </li>
+            <li class="childUlLi">
+            	<a href="${pageContext.request.contextPath}/common/changePassword.jsp"><i class="glyph-icon icon-reorder"></i>修改密码</a>
+            </li>
         </ul>
     </div>
     <!--菜单-->

@@ -53,6 +53,7 @@
 		<mapper resource="com/toy/data/SelectMeetingInfoMapper.xml"/>
 		<mapper resource="com/toy/data/SelectApplicationInfoMapper.xml"/>
 		<mapper resource="com/toy/data/SelectEmployeeMapper.xml"/>
+		<mapper resource="com/toy/data/OperatePasswordMapper.xml"/>
 	</mappers>
 
 </configuration>

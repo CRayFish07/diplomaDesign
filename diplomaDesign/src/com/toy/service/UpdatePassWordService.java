@@ -28,15 +28,12 @@ public class UpdatePassWordService {
 			info.put("newPassword", newPassword);
 			info.put("logName", logName);
 			
-			if( tempOldPassword.equals(oldPassword)){ //输入的密码验证错误，直接返回错误
-				return false;
-			}else{  //输入密码验证正确
-				int reNum = operatePassword.changePassword(info);
+			if( tempOldPassword.equals(oldPassword) ){ 				//输入的密码验证错误，直接返回错误
+				int reNum = operatePassword.changePassword(info);   //密码的修改   
 				session.commit();
 				if( reNum != 0){
 					return true;
 				}
-				return false;
 			}
 		}catch(Exception e){
 			System.out.println("修改密码异常");

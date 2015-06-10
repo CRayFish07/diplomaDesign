@@ -7,6 +7,6 @@
   </head>
   
   <body> 
-        <jsp:forward page="/WEB-INF/log/log.jsp"></jsp:forward>
+      <jsp:forward page="/WEB-INF/log/log.jsp"></jsp:forward>
   </body>
 </html>

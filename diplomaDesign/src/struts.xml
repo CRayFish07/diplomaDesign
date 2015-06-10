@@ -162,4 +162,11 @@
 		</action>
 	</package>
 	
+	<!-- 修改密码 -->
+	<package name="changPassWord" extends="struts-default" namespace="/">
+		<action name="changePassword" class="com.toy.action.UpdatePasswordAction">
+			<result name="success">/common/changePassword.jsp</result>
+			<result name="error">/common/changePasswordErr.jsp</result>
+		</action>
+	</package>
 </struts>
