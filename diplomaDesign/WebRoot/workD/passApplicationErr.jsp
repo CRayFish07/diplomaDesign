@@ -46,7 +46,7 @@
 				<td><s:property value="#list.meeting_order_time"/></td>
 				<td><s:property value="#list.log_name"/></td>
 				<td>
-					<a href="????">发消息</a>
+					<a href="(selectMeeing!getMeetingById)?id=${list.meeting_id}">发消息</a>&nbsp;&nbsp;<a href="updateMeetingToCancel?id=${list.meeting_id}">撤销</a>
 				</td>
 			</tr>
 			</s:iterator>

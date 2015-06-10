@@ -19,9 +19,27 @@ public class SelectMeetingAction extends ActionSupport{
 	
 	//返回到前台的会议信息集合
 	private ArrayList<Meeting> meetingList;
+	
+	//获取需要查询数据的id
+	private int id;
+	
+	//返回到前台使用的Meeting的信息
+	private Meeting meeting;
 
 //	@getter && setter	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Meeting getMeeting() {
+		return meeting;
+	}
+	public void setMeeting(Meeting meeting) {
+		this.meeting = meeting;
+	}
 	public String getStatus() {
 		return status;
 	}
@@ -68,13 +86,19 @@ public class SelectMeetingAction extends ActionSupport{
 	}
 	
 	/**
-	 * 传入会议的id，得到该会议的各种信息
+	 * 传入会议的id，得到该会议的各个字段信息
 	 * @param id
 	 * @return
 	 */
-	public String getMeetingById(int id){
+	public String getMeetingById() throws Exception{
+		GetApplicationInfoService getMeeting = new GetApplicationInfoService();
+		Meeting info = getMeeting.getSingleMeeting(id);
 		
-		return null;
+		if( info != null ){
+			this.setMeeting(info);
+			return "Message";
+		}
+		return "MessageErr";
 	}
 	
 	/**
@@ -95,6 +119,4 @@ public class SelectMeetingAction extends ActionSupport{
 		}
 		return "deptMeetErr";
 	}
-	
-	
 }

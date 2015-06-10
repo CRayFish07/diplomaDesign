@@ -37,7 +37,7 @@
 				log_name, meeting_start, meeting_end, 
 				meeting_order_time, meeting_mark, dept_id
 		FROM meet_date
-		WHERE meeting_room_id = #{id};
+		WHERE meeting_id = #{id};
 	</select>
 	
 	<select id="selectMeetingInfoListE" parameterType="int" resultType="Meeting">

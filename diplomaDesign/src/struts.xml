@@ -102,6 +102,9 @@
 			<result name="error">/workD/passApplicationErr.jsp</result>
 			<result name="deptMeet">/workE/deptMeeting.jsp</result>
 			<result name="deptMeetErr">/workE/deptMeetingErr.jsp</result>
+			<!-- 消息发送界面 -->
+			<result name="Message">/workD/sendMessage.jsp</result>
+			<result name="MessageErr">/workD/passApplicationErr.jsp</result>
 		</action>
 		<action name="selectApplication" class="com.toy.action.SelectApplicationAction">
 			<result name="success">/workD/unPassApplication.jsp</result>
@@ -150,5 +153,13 @@
 		</action>
 	</package>
 	
+	
+	<!-- 邮件发送Action -->
+	<package name="sendEmail" extends="struts-default" namespace="/">
+		<action name="sendMail" class="com.toy.action.SendMail">
+			<result name="sendSuccess">/workD/passApplication.jsp</result>
+			<result name="sendErr">/wordD/passApplication.jsp</result>
+		</action>
+	</package>
 	
 </struts>

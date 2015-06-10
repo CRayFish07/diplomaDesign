@@ -47,4 +47,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>lib</name>
+			<type>2</type>
+			<location>D:/TomcatInstall/apache-tomcat-6.0.43/lib</location>
+		</link>
+	</linkedResources>
 </projectDescription>
