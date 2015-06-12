@@ -12,8 +12,13 @@ import com.toy.service.AddApplicationService;
 
 public class AddApplicationAction extends ActionSupport{
 	private String start;
+	private String hourS;
+	private String miniteS;
 	private String end;
+	private String hourE;
+	private String miniteE;
 	private String remarks;
+	private String capacity;
 
 	public String getStart() {
 		return start;
@@ -23,6 +28,36 @@ public class AddApplicationAction extends ActionSupport{
 	}
 	public String getEnd() {
 		return end;
+	}
+	public String getHourS() {
+		return hourS;
+	}
+	public void setHourS(String hourS) {
+		this.hourS = hourS;
+	}
+	public String getMiniteS() {
+		return miniteS;
+	}
+	public void setMiniteS(String miniteS) {
+		this.miniteS = miniteS;
+	}
+	public String getHourE() {
+		return hourE;
+	}
+	public void setHourE(String hourE) {
+		this.hourE = hourE;
+	}
+	public String getMiniteE() {
+		return miniteE;
+	}
+	public void setMiniteE(String miniteE) {
+		this.miniteE = miniteE;
+	}
+	public String getCapacity() {
+		return capacity;
+	}
+	public void setCapacity(String capacity) {
+		this.capacity = capacity;
 	}
 	public void setEnd(String end) {
 		this.end = end;
@@ -42,10 +77,13 @@ public class AddApplicationAction extends ActionSupport{
 		String userName = (String)session.getAttribute("name");
 //		System.out.println( userName );  //≤‚ ‘ ˝æ›
 		
+		String st = this.fomatTime(this.start, this.hourS, this.miniteS);
+		String en = this.fomatTime(this.end, this.hourE, this.miniteE);
+		
 		// to do something here
 		Application application = new Application();
-		application.setApplication_start(start);
-		application.setApplication_end(end);
+		application.setApplication_start(st);
+		application.setApplication_end(en);
 		application.setApplication_remarks(remarks);
 		application.setLog_name(userName);
 		
@@ -54,5 +92,10 @@ public class AddApplicationAction extends ActionSupport{
 			return "success";
 		}
 		return "error";
+	}
+	
+	public String fomatTime(String date, String hour, String minite){
+		String time = date + " " + hour + ":" + minite + ":" + "00";		
+		return time;
 	}
 }
