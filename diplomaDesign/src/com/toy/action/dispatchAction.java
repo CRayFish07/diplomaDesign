@@ -37,6 +37,8 @@ public class dispatchAction extends ActionSupport{
 			return "deptMeet";
 		}else if( "deptMeetOurs".equals(mark)){
 			return "deptMeetOurs";
+		}else if( "addUserLog".equals(mark) ){
+			return "addUserLog";
 		}
 		return null;
 	}

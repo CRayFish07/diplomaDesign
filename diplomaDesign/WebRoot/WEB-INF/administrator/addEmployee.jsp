@@ -53,6 +53,7 @@
             	<ul>
             		<li><a href="dispatch?mark=deleteEmp" ><i class="glyph-icon icon-chevron-right"></i>删除用户</a></li>
             		<li><a href="dispatch?mark=updateEmp" ><i class="glyph-icon icon-chevron-right"></i>修改用户</a></li>
+            		<li><a href="dispatch?mark=addUserLog"><i class="glyph-icon icon-chevron-right"></i>添加账号</a></li>
             	</ul>
             </li>
             <li class="childUlLi">
@@ -92,7 +93,7 @@
 	<form action="addEmployee" method="post">
 		<div class="control-group">
 			<label class="laber_from">姓名</label>
-			<div  class="controls" ><input class="input_from" type="text" placeholder=" 请输入用户名" name="name"><p class=help-block></p></div>
+			<div  class="controls" ><input class="input_from" type="text" placeholder=" 请输入姓名" name="name" /><p class=help-block></p></div>
 		</div>
 		<div class="control-group">
 			<label class="laber_from">性别</label>

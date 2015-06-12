@@ -47,6 +47,20 @@
 			<result name="success">/work/updateEmployee.jsp</result>
 			<result name="error">/work/updateErr.jsp</result>
 		</action>
+		<!-- 增加用户登录用户名和密码 -->
+		 <action name="selectEmployeeA" class="com.toy.action.SelectEmployeeAction">
+		 	<result name="success">/work/selectEmployee.jsp</result>
+		 	<result name="error">/work/selectEmployee.jsp</result>
+		 </action>
+		 <action name="addUserLogOne" class="com.toy.action.AddUserLogAction">
+		 	<result name="success">/work/addUserLog.jsp</result>
+		 	<result name="error">/work/selectEmployee.jsp</result>
+		 </action>
+		 <action name="addUserLogTwo" class="com.toy.action.AddUserLogTrueAction">
+		 	<result name="success">/work/selectEmployee.jsp</result>
+		 	<result name="error">/work/selectEmployee.jsp</result>
+		 </action>
+		 
 		<action name="selectEmployeeById" class="com.toy.action.SelectEmployeeByIdAction">
 			<result name="success">/work/updateFrame.jsp</result>
 			<result name="error">/work/updateErr.jsp</result>
@@ -150,6 +164,7 @@
 			<result name="checkApp">/WEB-INF/manager/manager.jsp</result>
 			<result name="deptMeet">/WEB-INF/employee/employee.jsp</result>
 			<result name="deptMeetOurs">/WEB-INF/employee/employeeOurs.jsp</result>
+			<result name="addUserLog">/WEB-INF/administrator/addUserLog.jsp</result>
 		</action>
 	</package>
 	

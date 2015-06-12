@@ -54,6 +54,7 @@
 		<mapper resource="com/toy/data/SelectApplicationInfoMapper.xml"/>
 		<mapper resource="com/toy/data/SelectEmployeeMapper.xml"/>
 		<mapper resource="com/toy/data/OperatePasswordMapper.xml"/>
+		<mapper resource="com/toy/data/AddUserLogMapper.xml"></mapper>
 	</mappers>
 
 </configuration>

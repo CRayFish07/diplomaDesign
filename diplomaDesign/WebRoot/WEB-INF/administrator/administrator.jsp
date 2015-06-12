@@ -53,6 +53,7 @@
             	<ul>
             		<li><a href="dispatch?mark=deleteEmp" ><i class="glyph-icon icon-chevron-right"></i>删除用户</a></li>
             		<li><a href="dispatch?mark=updateEmp" ><i class="glyph-icon icon-chevron-right"></i>修改用户</a></li>
+            		<li><a href="dispatch?mark=addUserLog"><i class="glyph-icon icon-chevron-right"></i>添加账号</a></li>
             	</ul>
             </li>
             <li class="childUlLi">
