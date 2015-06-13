@@ -165,6 +165,11 @@
 			<result name="deptMeet">/WEB-INF/employee/employee.jsp</result>
 			<result name="deptMeetOurs">/WEB-INF/employee/employeeOurs.jsp</result>
 			<result name="addUserLog">/WEB-INF/administrator/addUserLog.jsp</result>
+			<!-- 修改密码，管理员、总经理、部门经理、普通员工 -->
+			<result name="changePasswordA">/WEB-INF/administrator/changePassword.jsp</result>
+			<result name="changePasswordM">/WEB-INF/manager/changePassword.jsp</result>
+			<result name="changePasswordD">/WEB-INF/deptManager/changePassword.jsp</result>
+			<result name="changePasswordE">/WEB-INF/employee/changePassword.jsp</result>
 		</action>
 	</package>
 	
@@ -180,8 +185,14 @@
 	<!-- 修改密码 -->
 	<package name="changPassWord" extends="struts-default" namespace="/">
 		<action name="changePassword" class="com.toy.action.UpdatePasswordAction">
-			<result name="success">/common/changePassword.jsp</result>
-			<result name="error">/common/changePasswordErr.jsp</result>
+			<result name="successA">/work/selectEmployee.jsp</result>
+			<result name="errorA">/common/changePasswordErr.jsp</result>
+			<result name="successM">/workM/checkApplication.jsp</result>
+			<result name="errorM">/common/changePasswordErr.jsp</result>
+			<result name="successD">/workD/addApplication.jsp</result>
+			<result name="errorD">/common/changePasswordErr.jsp</result>
+			<result name="successE">/workE/deptMeeting.jsp</result>
+			<result name="errorE">/common/changePasswordErr.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -33,6 +33,9 @@
             </li>
             <li class="childUlLi">
             	<a href="log!logOut"><i class="glyph-icon icon-reorder"></i>退出</a>
+            </li>
+             <li class="childUlLi">
+            	<a href="dispatch?mark=changePasswordM"><i class="glyph-icon icon-reorder"></i>修改密码</a>
             </li>            	
         </ul>
     </div>

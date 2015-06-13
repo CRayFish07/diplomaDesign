@@ -39,6 +39,14 @@ public class dispatchAction extends ActionSupport{
 			return "deptMeetOurs";
 		}else if( "addUserLog".equals(mark) ){
 			return "addUserLog";
+		}else if( "changePasswordA".equals(mark) ){  //ÐÞ¸ÄÃÜÂë
+			return "changePasswordA";
+		}else if( "changePasswordM".equals(mark) ){
+			return "changePasswordM";
+		}else if( "changePasswordD".equals(mark) ){
+			return "changePasswordD";
+		}else if( "changePasswordE".equals(mark) ){
+			return "changePasswordE";
 		}
 		return null;
 	}

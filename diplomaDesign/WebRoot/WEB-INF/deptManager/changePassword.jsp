@@ -16,9 +16,9 @@
 <body>
     <!--顶部-->
     <div class="layout_top_header">
-            <div style="float: left"><span style="font-size: 16px;line-height: 45px;padding-left: 20px;color: #8d8d8d">办公室管理系统</span></div>
+            <div style="float: left"><span style="font-size: 16px;line-height: 45px;padding-left: 20px;color: #8d8d8d">办公室管理系统</h1></span></div>
             <div id="ad_setting" class="ad_setting">
-                    <span style="color: red;">欢迎您的登录</span>
+                    <span style="color: red;">欢迎部门经理登录</span>
             </div>
             
     </div>
@@ -27,17 +27,23 @@
     <div class="layout_left_menu">
         <ul id="menu">
             <li class="childUlLi">
-               <a href="????"><i class="glyph-icon icon-home"></i>首页</a>
+               <a href="????" ><i class="glyph-icon icon-home"></i>首页</a>
                 <ul>
-                    <li><a href="????"><i class="glyph-icon icon-chevron-right"></i>自己部门的会议</a></li>
-                	<li><a href="????"><i class="glyph-icon icon-chevron-right"></i>自己参加的会议</a></li>
+                    <li><a href="dispatch?mark=addApp" ><i class="glyph-icon icon-chevron-right"></i>申请会议</a></li>
                 </ul>
+            </li>
+            <li class="childUlLi">
+            	<a href="????" ><i class="glyph-icon icon-reorder"></i>会议查询</a>
+            	<ul>
+            		<li><a href="dispatch?mark=passApp" ><i class="glyph-icon icon-chevron-right"></i>通过的会议</a></li>
+            		<li><a href="dispatch?mark=unPassApp" ><i class="glyph-icon icon-chevron-right"></i>未通过的会议</a></li>
+            	</ul>
             </li>
             <li class="childUlLi">
             	<a href="log!logOut"><i class="glyph-icon icon-reorder"></i>退出</a>
             </li>
-             <li class="childUlLi">
-            	<a href="dispatch?mark=changePasswordE"><i class="glyph-icon icon-reorder"></i>修改密码</a>
+            <li class="childUlLi">
+            	<a href="dispatch?mark=changePasswordD"><i class="glyph-icon icon-reorder"></i>修改密码</a>
             </li>
         </ul>
     </div>
@@ -46,14 +52,15 @@
 		
 		<!-- 中部的导航空间-->
         <div class="route_bg">
-        	
         </div>
         <div class="mian_content">
             <div id="page_content">
             	<!-- 这一部分是中间显示的部分可以将这一部分换成其他的内容来改变内容-->
-                <iframe id="menuFrame" name="menuFrame" src="${pageContext.request.contextPath}/workE/deptMeeting.jsp" style="overflow:visible;"
+            	
+                <iframe id="menuFrame" name="menuFrame" src="${pageContext.request.contextPath}/common/changePassword.jsp" style="overflow:visible;"
                         scrolling="yes" frameborder="no" width="100%" height="100%">
-               </iframe> 
+                </iframe>
+                
             </div>
         </div>
     </div>

@@ -34,7 +34,6 @@ public class UpdatePasswordAction extends ActionSupport{
 		this.oldPassword = oldPassword;
 	}
 
-	
 	@Override
 	public String execute() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -45,11 +44,35 @@ public class UpdatePasswordAction extends ActionSupport{
 		
 		newPassword = (newPassword != null) ? newPassword : "";
 		
-		if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
-			return "error";
-		}
-		if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
-			return "success";
+		String authority = (String)session.getAttribute("authority");  //得到用户的权限、管理员、经理、部门经理、普通职员
+		if( "0".equals(authority) ){
+			if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
+				return "errorA";
+			}
+			if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
+				return "successA";
+			}
+		}else if( "1".equals(authority) ){
+			if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
+				return "errorM";
+			}
+			if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
+				return "successM";
+			}
+		}else if( "5".equals(authority) ){
+			if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
+				return "errorD";
+			}
+			if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
+				return "successD";
+			}
+		}else if( "9".equals(authority) ){
+			if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
+				return "errorE";
+			}
+			if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
+				return "successE";
+			}
 		}
 		return "error";
 	}

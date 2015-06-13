@@ -7,7 +7,6 @@
 <title>办公室管理系统</title>
 
 <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" />
-
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/tendina.min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
@@ -18,7 +17,7 @@
     <div class="layout_top_header">
             <div style="float: left"><span style="font-size: 16px;line-height: 45px;padding-left: 20px;color: #8d8d8d">办公室管理系统</span></div>
             <div id="ad_setting" class="ad_setting">
-                    <span style="color: red;">欢迎您的登录</span>
+                    <span style="color: red;">欢迎总经理登录</span>
             </div>
             
     </div>
@@ -27,33 +26,32 @@
     <div class="layout_left_menu">
         <ul id="menu">
             <li class="childUlLi">
-               <a href="????"><i class="glyph-icon icon-home"></i>首页</a>
+               <a href="main.html"  target="menuFrame"><i class="glyph-icon icon-home"></i>首页</a>
                 <ul>
-                    <li><a href="????"><i class="glyph-icon icon-chevron-right"></i>自己部门的会议</a></li>
-                	<li><a href="????"><i class="glyph-icon icon-chevron-right"></i>自己参加的会议</a></li>
+                    <li><a href="dispatch?mark=checkApp"><i class="glyph-icon icon-chevron-right"></i>检查申请</a></li>
                 </ul>
             </li>
             <li class="childUlLi">
             	<a href="log!logOut"><i class="glyph-icon icon-reorder"></i>退出</a>
             </li>
              <li class="childUlLi">
-            	<a href="dispatch?mark=changePasswordE"><i class="glyph-icon icon-reorder"></i>修改密码</a>
-            </li>
+            	<a href="dispatch?mark=changePasswordM"><i class="glyph-icon icon-reorder"></i>修改密码</a>
+            </li>            	
         </ul>
     </div>
     <!--菜单-->
     <div id="layout_right_content" class="layout_right_content">
 		
 		<!-- 中部的导航空间-->
-        <div class="route_bg">
-        	
-        </div>
+        <div class="route_bg"></div>
+        
         <div class="mian_content">
             <div id="page_content">
             	<!-- 这一部分是中间显示的部分可以将这一部分换成其他的内容来改变内容-->
-                <iframe id="menuFrame" name="menuFrame" src="${pageContext.request.contextPath}/workE/deptMeeting.jsp" style="overflow:visible;"
+       
+                <iframe id="menuFrame" name="menuFrame" src="${pageContext.request.contextPath}/common/changePassword.jsp" style="overflow:visible;"
                         scrolling="yes" frameborder="no" width="100%" height="100%">
-               </iframe> 
+                </iframe>  
             </div>
         </div>
     </div>

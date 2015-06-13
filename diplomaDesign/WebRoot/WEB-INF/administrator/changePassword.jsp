@@ -134,7 +134,7 @@
 				<div id="page_content">
 					<!-- 这一部分是中间显示的部分可以将这一部分换成其他的内容来改变内容-->
 					 
-                <iframe id="menuFrame" name="menuFrame" src="${pageContext.request.contextPath}/work/updateEmployee.jsp" style="overflow:visible;"
+                <iframe id="menuFrame" name="menuFrame" src="${pageContext.request.contextPath}/common/changePassword.jsp" style="overflow:visible;"
                         scrolling="yes" frameborder="no" width="100%" height="100%">
                 </iframe>
                 
