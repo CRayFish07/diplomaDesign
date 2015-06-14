@@ -26,7 +26,7 @@
 	<!-- 操作公司职员增加、删除、修改 、查询-->
 	<package name="operationEmployee" extends="struts-default" namespace="/">
 		<action name="addEmployee" class="com.toy.action.AddEmployeeAction">
-			<result name="success">/WEB-INF/manager/addSuccess.jsp</result>
+			<result name="success">/WEB-INF/administrator/addEmployee.jsp</result>
 			<result name="error">/WEB-INF/manager/addEmp.jsp</result>
 		</action>
 		<action name="deleteEmployee" class="com.toy.action.DeleteEmployeeAction">

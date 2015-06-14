@@ -7,6 +7,7 @@
 <title>增加员工</title>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/checkInput.js"></script>
 
 <link rel="stylesheet" href="css/add.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="utilLib/bootstrap.min.css" type="text/css" media="screen" />

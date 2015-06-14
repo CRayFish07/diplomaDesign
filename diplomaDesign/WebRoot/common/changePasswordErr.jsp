@@ -35,8 +35,8 @@
 		<div class="control-group">
 			<label class="laber_from"></label>
 			<div class="controls">
-				<button  class="btn btn-success" style="width:100px;" >申请</button>
-				<button  class="btn btn-success" style="width:100px;" >取消</button>
+				<button  class="btn btn-success" style="width:100px;" onclick="return confirmPassword();">申请</button>
+				<button  class="btn btn-success" style="width:100px;" onclick="return clearInput();">取消</button>
 			</div>
 		</div>
 	</form>

@@ -10,6 +10,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/tendina.min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="javascript/checkInput.js"></script>
 
 </head>
 <body>
@@ -32,7 +33,7 @@
                 </ul>
             </li>
             <li class="childUlLi">
-            	<a href="log!logOut"><i class="glyph-icon icon-reorder"></i>退出</a>
+            	<a href="log!logOut" onclick="return exitConfirm();"><i class="glyph-icon icon-reorder"></i>退出</a>
             </li>
              <li class="childUlLi">
             	<a href="dispatch?mark=changePasswordM"><i class="glyph-icon icon-reorder"></i>修改密码</a>

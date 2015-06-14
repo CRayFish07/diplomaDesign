@@ -7,6 +7,7 @@
 <title>增加房间</title>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/checkInput.js"></script>
 
 <link rel="stylesheet" href="../css/add.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../utilLib/bootstrap.min.css" type="text/css" media="screen" />
@@ -17,7 +18,7 @@
 	<form action="addRoom" method="post">
 		<div class="control-group">
 			<label class="laber_from">房间号</label>
-			<div  class="controls" ><input class="input_from" type="text" placeholder=" 请输入房间号" name="name"><p class=help-block></p></div>
+			<div  class="controls" ><input class="input_from" type="text" placeholder=" 请输入房间号" name="name" /><p class=help-block></p></div>
 		</div>
 		<div class="control-group">
 			<label class="laber_from">房间地址</label>
@@ -35,8 +36,8 @@
 		<div class="control-group">
 			<label class="laber_from"></label>
 			<div class="controls">
-				<button  class="btn btn-success" style="width:100px;" >提交</button>
-				<button  class="btn btn-success" style="width:100px;" >取消</button>
+				<button  class="btn btn-success" style="width:100px;"  onclick="return check();">提交</button>
+				<button  class="btn btn-success" style="width:100px;"  onclick="return clearInput();">取消</button>
 			</div>
 		</div>
 	</form>
