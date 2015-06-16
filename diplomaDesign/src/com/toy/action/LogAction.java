@@ -29,7 +29,7 @@ public class LogAction extends ActionSupport{
 	
 	@Override
 	public String execute() throws Exception{
-		LogService ls = new LogService();  
+		LogService ls = new LogService();
 		HttpServletRequest request = ServletActionContext.getRequest(); //得到http中的request中的信息
 		String radio = request.getParameter("radio"); //获取选项框的内容
 //		System.out.println(radio);  //测试数据
