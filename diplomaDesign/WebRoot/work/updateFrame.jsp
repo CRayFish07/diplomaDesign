@@ -7,6 +7,7 @@
 <title>修改员工信息</title>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/checkInput.js"></script>
 
 <link rel="stylesheet" href="../css/add.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../utilLib/bootstrap.min.css" type="text/css" media="screen" />
@@ -17,7 +18,7 @@
 	<form action="updateEmployee" method="post">
 		<div class="control-group">
 			<label class="laber_from">姓名</label>
-			<div  class="controls" ><input class="input_from" type="text" placeholder=" 请输入用户名" name="name" value="${employee.emp_name}"><p class=help-block></p></div>
+			<div  class="controls" ><input class="input_from" type="text" placeholder=" 请输入用户名" name="name" value="${employee.emp_name}"/><p class=help-block></p></div>
 		</div>
 		<div class="control-group">
 			<label class="laber_from">性别</label>
@@ -86,7 +87,7 @@
 		<div class="control-group">
 			<label class="laber_from"></label>
 			<div class="controls">
-				<button  class="btn btn-success" style="width:100px;" >修改</button>
+				<button  class="btn btn-success" style="width:100px;" onclick="return updateConfirm();">修改</button>
 				<button  class="btn btn-success" style="width:100px;" >取消</button>
 			</div>
 		</div>

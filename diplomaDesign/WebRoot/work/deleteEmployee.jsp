@@ -8,6 +8,7 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../js/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="../js/style.css" />
+		<script type="text/javascript" src="../javascript/checkInput.js"></script>
 
 		<style type="text/css">
 			body {
@@ -67,7 +68,7 @@
     				<td><s:property value="#list.emp_address"></s:property></td>
     				<td><s:property value="#list.emp_authority"></s:property></td>
     				<td><s:property value="#list.emp_dept_id"></s:property></td>
-    				<td><a href="deleteEmployee?id=${list.emp_id}">删除</a></td>
+    				<td><a href="deleteEmployee?id=${list.emp_id}" onclick="return deleteConfirm();">删除</a></td>
     			</tr>
     			</s:iterator>
 		</table>

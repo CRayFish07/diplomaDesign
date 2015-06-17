@@ -11,7 +11,7 @@ import com.toy.util.MyFactory;
 public class UpdatePassWordService {
 	
 	/**
-	 * 传入修改的用户名和新的密码，修改用户自己的密码
+	 * 用户表中修改密码，传入修改的用户名和新的密码，修改用户自己的密码
 	 * @return
 	 */
 	public boolean changePassWord(String logName, String newPassword, String oldPassword){
@@ -39,6 +39,41 @@ public class UpdatePassWordService {
 			System.out.println("修改密码异常");
 			e.printStackTrace();
 			System.out.println("修改密码异常");
+		}finally{
+			session.close();
+		}
+		return false;
+	}
+	
+	/**
+	 * 修改管理员密码使用的方法
+	 * @param logName
+	 * @param newPassword
+	 * @param oldPassword
+	 * @return
+	 */
+	public boolean changePasswordAdmin(String logName, String newPassword, String oldPassword){
+		SqlSession session = null;
+		try{
+			SqlSessionFactory sessionFactory = MyFactory.getFactory();
+			session = sessionFactory.openSession();
+			OperatePasswordMapper operatePassword = session.getMapper(OperatePasswordMapper.class);
+			
+			HashMap<String, String> info = new HashMap<String, String>();
+			info.put("newPassword", newPassword);
+			info.put("logName", logName);
+			
+			int reNum = operatePassword.changePasswordAdmin(info);   //密码的修改   
+			session.commit();
+			
+			if( reNum != 0 ){
+				return true;
+			}
+			
+		}catch(Exception e){
+			System.out.println("修改管理员密码异常");
+			e.printStackTrace();
+			System.out.println("修改管理员密码异常");
 		}finally{
 			session.close();
 		}

@@ -30,8 +30,8 @@
             <li class="childUlLi">
                <a href="????"><i class="glyph-icon icon-home"></i>首页</a>
                 <ul>
-                    <li><a href="????"><i class="glyph-icon icon-chevron-right"></i>自己部门的会议</a></li>
-                	<li><a href="????"><i class="glyph-icon icon-chevron-right"></i>自己参加的会议</a></li>
+                    <li><a href="dispatch?mark=deptMeet"><i class="glyph-icon icon-chevron-right"></i>自己部门的会议</a></li>
+                	<li><a href="dispatch?mark=deptMeetOurs"><i class="glyph-icon icon-chevron-right"></i>自己参加的会议</a></li>
                 </ul>
             </li>
             <li class="childUlLi">

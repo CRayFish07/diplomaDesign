@@ -7,7 +7,7 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../js/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="../js/style.css" />
-		
+		<script type="text/javascript" src="../javascript/checkInput.js"></script>
 	</head>
 
 	<body>
@@ -35,7 +35,7 @@
 				<td><s:property value="#list.application_time"/></td>
 				<td><s:property value="#list.log_name"/></td>
 				<td>
-					<a href="addMeeting?id=${list.application_id}">通过</a>
+					<a href="addMeeting?id=${list.application_id}" onclick="return passConfirm();">通过</a>
 				</td>
 			</tr>
 			</s:iterator>

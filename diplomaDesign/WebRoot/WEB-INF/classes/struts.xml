@@ -107,8 +107,8 @@
 			<result name="error">/workD/addApplicationErr.jsp</result>		
 		</action>
 		<action name="addMeeting" class="com.toy.action.AddMeetingAction" >
-			<result name="success">/WEB-INF/date/date.jsp</result>
-			<result name="error">/WEB-INF/date/dateErr.jsp</result>
+			<result name="success">/workM/checkApplication.jsp</result>
+			<result name="error">/workM/checkApplicationErr.jsp</result>
 		</action>
 		<action name="selectMeeing" class="com.toy.action.SelectMeetingAction">
 			<result name="UnTake">/workD/passApplication.jsp</result>
@@ -165,6 +165,8 @@
 			<result name="deptMeet">/WEB-INF/employee/employee.jsp</result>
 			<result name="deptMeetOurs">/WEB-INF/employee/employeeOurs.jsp</result>
 			<result name="addUserLog">/WEB-INF/administrator/addUserLog.jsp</result>
+			<result name="deptMeet">/WEB-INF/employee/employee.jsp</result>
+			<result name="deptMeetOurs">/WEB-INF/employee/employeeOurs.jsp</result>
 			<!-- 修改密码，管理员、总经理、部门经理、普通员工 -->
 			<result name="changePasswordA">/WEB-INF/administrator/changePassword.jsp</result>
 			<result name="changePasswordM">/WEB-INF/manager/changePassword.jsp</result>

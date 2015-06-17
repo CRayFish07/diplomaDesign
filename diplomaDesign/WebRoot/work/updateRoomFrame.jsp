@@ -7,6 +7,7 @@
 <title>增加房间</title>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/checkInput.js"></script>
 
 <link rel="stylesheet" href="../css/add.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../utilLib/bootstrap.min.css" type="text/css" media="screen" />
@@ -35,8 +36,8 @@
 		<div class="control-group">
 			<label class="laber_from"></label>
 			<div class="controls">
-				<button  class="btn btn-success" style="width:100px;" >提交</button>
-				<button  class="btn btn-success" style="width:100px;" >取消</button>
+				<button  class="btn btn-success" style="width:100px;" onclick="return updateRoomConfirm();">提交</button>
+				<button  class="btn btn-success" style="width:100px;" onclick="return false;">取消</button>
 			</div>
 		</div>
 	</form>

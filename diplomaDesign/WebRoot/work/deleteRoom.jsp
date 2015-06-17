@@ -8,6 +8,8 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../js/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="../js/style.css" />
+		
+		<script type="text/javascript" src="../javascript/checkInput.js"></script>
 
 		<style type="text/css">
 			body {
@@ -55,7 +57,7 @@
     				<td><s:property value="#list.room_name"/></td>
     				<td><s:property value="#list.room_address"></s:property></td>
     				<td><s:property value="#list.room_capacity"></s:property></td>
-    				<td><a href="deleteRoom?id=${list.room_id}">删除</a></td>
+    				<td><a href="deleteRoom?id=${list.room_id}" conclick="return deleteConfirm();">删除</a></td>
     			</tr>
     			</s:iterator>
 		</table>

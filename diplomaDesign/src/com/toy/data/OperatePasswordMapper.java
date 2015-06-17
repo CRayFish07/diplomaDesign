@@ -9,7 +9,7 @@ public interface OperatePasswordMapper {
 	 * @param info
 	 * @return
 	 */
-	int changePassword(Map info);
+	int changePassword(Map<String, String> info);
 	
 	/**
 	 * 传入自己的用户名，查询得到旧的密码，用于验证
@@ -17,4 +17,11 @@ public interface OperatePasswordMapper {
 	 * @return
 	 */
 	String getOldPassword(String logName);
+	
+	/**
+	 * 修改管理员的密码
+	 * @param info
+	 * @return
+	 */
+	int changePasswordAdmin(Map<String, String> info);
 }

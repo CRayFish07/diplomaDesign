@@ -90,3 +90,125 @@ function exitConfirm(){
 	}
 	return false;
 }
+
+//删除时使用的确认提醒
+function deleteConfirm(){
+	if(confirm("是否删除数据?")){
+		return true;
+	}
+	return false;
+}
+
+//修改时使用的确认提醒
+function updateConfirm(){
+	if(confirm("是否修改数据?")){
+		return true;
+	}
+	return false;
+}
+
+//增加登录账号时使用的确认提醒
+function addCountConfirm(){
+	//校验输入非空
+	var inpu = document.getElementsByTagName("input");
+	for(var i=0; i<inpu.length; i++){
+		if(inpu[i].value == ""){
+			alert("请输入全部信息！");
+			return false;
+		}
+	}
+	
+	if(confirm("确认增加用户登录信息?")){
+		return true;
+	}
+	return false;
+}
+
+//需改房间时使用的确认提醒
+function updateRoomConfirm(){
+	//校验输入非空
+	var inpu = document.getElementsByTagName("input");
+	for(var i=0; i<inpu.length; i++){
+		if(inpu[i].value == ""){
+			alert("请输入全部信息！");
+			return false;
+		}
+	}
+	
+	if(confirm("确认修改房间信息？")){
+		return true;
+	}
+	return false;
+}
+
+//总经理审批时使用的确认提醒
+function passConfirm(){
+	if( confirm("确认通过这次申请？") ){
+		 return true;
+	}
+	return false;
+}
+
+//部门经理会议申请校验
+function confirmApplication(){
+	var startD = document.getElementById("startD").value;
+	var hourS = document.getElementById("hourS").value;
+	var miniteS = document.getElementById("miniteS").value;
+	
+	var endD = document.getElementById("endD").value;
+	var hourE = document.getElementById("hourE").value;
+	var miniteE = document.getElementById("miniteE").value;
+	
+	var remarks = document.getElementById("remarks").value;
+	var capacity = document.getElementById("capacity").value;
+	
+	//判断是否为空
+	if( startD == ""){
+		alert("开始时间不能为空");
+		return false;
+	}
+	if( hourS == "" ){
+		alert("开始时间小时不能为空");
+		return false;
+	}
+	if( miniteS == ""){
+		alert("开始时间分钟不能为空");
+		return false;
+	}
+	if( endD == ""){
+		alert("结束时间不能为空");
+		return false;
+	}
+	if( hourE == ""){
+		alert("结束时间小时不能为空");
+		return false;
+	}
+	if( miniteE == ""){
+		alert("结束时间分钟不能为空");
+		return  false;
+	}
+	if( remarks == ""){
+		alert("会议主题不能为空");
+		return false;
+	}
+	if( capacity == ""){
+		alert("会议室大小不能为空");
+		return false;
+	}
+	
+	var timeS = startD + hourS + miniteS;
+	var timeE = endD + hourE + miniteE;
+	
+	timeS = timeS.replace("-", "");
+	timeS = timeS.replace("-", "");
+	timeE = timeE.replace("-", "");
+	timeE = timeE.replace("-", "");
+	
+	if( timeS >= timeE ){
+		alert("结束时间不能比开始时间早");
+		return false;
+	}
+	
+	return true;
+}
+

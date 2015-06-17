@@ -41,16 +41,16 @@ public class LogAction extends ActionSupport{
 		session.setAttribute("department", dept);		//将部门的id放入到session
 		
 		if("admin".equals(radio)){ //返回管理员的的登录字符串
-			session.setAttribute("authority", 0);
+			session.setAttribute("authority", "0");
 			return adminLog();
 		}else if("emp".equals(radio)){ //返回普通员工的登录字符串
-			session.setAttribute("authority", 9);
+			session.setAttribute("authority", "9");
 			return userLog();			
 		}else if("deptManager".equals(radio)){ //返回部门经理的 登录字符串
-			session.setAttribute("authority", 5);
+			session.setAttribute("authority", "5");
 			return deptManagerLog();
 		}else if("manager".equals(radio)){
-			session.setAttribute("authority", 1);
+			session.setAttribute("authority", "1");
 			return managerLog();
 		}
 		return "error";

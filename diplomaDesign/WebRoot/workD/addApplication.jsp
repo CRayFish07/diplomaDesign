@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="../js/jmin.js" ></script>
 		<script type="text/javascript" src="../js/jquery.date_input.pack.js"></script> 
 		<link rel="stylesheet" href="../css/lik.css" />
+		<script type="text/javascript" src="../javascript/checkInput.js"></script>
 </head>
 <body>
 
@@ -29,9 +30,9 @@
 				})
 			</script>
 			<div style=" margin:50px; width:400px;">
-				<input name="start" placeholder="请选择开始时间" style="width:226px;background: #fefefe;border: 1px solid #bbb;font-size: 14px;color: #333;padding: 7px;border-radius: 3px;" type="text" class="date_picker" />
+				<input name="start" id="startD" placeholder="请选择开始时间" style="width:226px;background: #fefefe;border: 1px solid #bbb;font-size: 14px;color: #333;padding: 7px;border-radius: 3px;" type="text" class="date_picker" />
 			<div class="controls">
-				<select class="input_select" name="hourS">
+				<select class="input_select" name="hourS" id="hourS">
 					<option value="00">00</option>
 					<option value="01">01</option>
 					<option value="02">02</option>
@@ -57,7 +58,7 @@
 					<option value="22">22</option>
 					<option value="23">23</option>
 				</select>：
-				<select class="input_select" name="miniteS">
+				<select class="input_select" name="miniteS" id="miniteS">
 					<option value="00">00</option>
 					<option value="01">01</option>
 					<option value="02">02</option>
@@ -131,9 +132,9 @@
 		  -->
 		  
 		  <div style=" margin:50px; width:400px;">
-				<input  name="end" placeholder="请选择结束时间" style="width:226px;background: #fefefe;border: 1px solid #bbb;font-size: 14px;color: #333;padding: 7px;border-radius: 3px;" type="text" class="date_picker" />
+				<input  name="end" id="endD" placeholder="请选择结束时间" style="width:226px;background: #fefefe;border: 1px solid #bbb;font-size: 14px;color: #333;padding: 7px;border-radius: 3px;" type="text" class="date_picker" />
 			<div class="controls">
-				<select class="input_select" name="hourE">
+				<select class="input_select" name="hourE" id="hourE">
 					<option value="00">00</option>
 					<option value="01">01</option>
 					<option value="02">02</option>
@@ -159,7 +160,7 @@
 					<option value="22">22</option>
 					<option value="23">23</option>
 				</select>：
-				<select class="input_select" name="miniteE">
+				<select class="input_select" name="miniteE" id="miniteE">
 					<option value="00">00</option>
 					<option value="01">01</option>
 					<option value="02">02</option>
@@ -227,22 +228,22 @@
 		<div class="control-group">
 			<label class="laber_from">会议主题</label>
 			<div class="controls">
-				<input type="text" name="remarks" class="input_from" placeholder="请输入会议主题" />
+				<input type="text" name="remarks" id="remarks" class="input_from" placeholder="请输入会议主题" />
 			</div>
 		</div>
 		
 		<div class="control-group">
 			<label class="laber_from">会议室大小</label>
 			<div class="controls">
-				<input type="text" name="capacity" class="input_from" placeholder="请输入会议室容量"/>
+				<input type="text" name="capacity" id="capacity" class="input_from" placeholder="请输入会议室容量"/>
 			</div>
 		</div>
 
 		<div class="control-group">
 			<label class="laber_from"></label>
 			<div class="controls">
-				<button  class="btn btn-success" style="width:100px;" >申请</button>
-				<button  class="btn btn-success" style="width:100px;" >取消</button>
+				<button  class="btn btn-success" style="width:100px;" onclick="return confirmApplication();">申请</button>
+				<button  class="btn btn-success" style="width:100px;" onclick="return false;">取消</button>
 			</div>
 		</div>
 	</form>

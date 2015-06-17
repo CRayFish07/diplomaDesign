@@ -49,8 +49,10 @@ public class UpdatePasswordAction extends ActionSupport{
 			if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
 				return "errorA";
 			}
-			if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
+			if( changePassword.changePasswordAdmin(logName, newPassword, oldPassword) ){  //说明更改成功
 				return "successA";
+			}else{
+				return "errorA";
 			}
 		}else if( "1".equals(authority) ){
 			if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
@@ -58,6 +60,8 @@ public class UpdatePasswordAction extends ActionSupport{
 			}
 			if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
 				return "successM";
+			}else{
+				return "errorM";
 			}
 		}else if( "5".equals(authority) ){
 			if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
@@ -65,6 +69,8 @@ public class UpdatePasswordAction extends ActionSupport{
 			}
 			if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
 				return "successD";
+			}else{
+				return "errorD";
 			}
 		}else if( "9".equals(authority) ){
 			if( !newPassword.equals(newPasswordCon)){  //密码校验，如果填写的两个新的密码不一致，直接返回错误
@@ -72,6 +78,8 @@ public class UpdatePasswordAction extends ActionSupport{
 			}
 			if( changePassword.changePassWord(logName, newPassword, oldPassword) ){  //说明更改成功
 				return "successE";
+			}else{
+				return "errorE";
 			}
 		}
 		return "error";
